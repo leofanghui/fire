@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>贝贝新年快乐～</title>
+  <title>贝贝新年快乐!</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
   <meta name="mobile-web-app-capable" content="yes">
@@ -37,9 +37,11 @@
 </head>
 
 <body>
+  <audio id="audioDom" autoplay="autoplay" loop="loop" preload="auto" src="./static/source/sun.mp3">
+    你的浏览器版本太低，不支持audio标签
+  </audio>
 
 
-  
   <div id="yhBtn"
     style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:999;display:flex;flex-direction:column;justify-content:center;align-items:center;color:#fff ; font-size:15px    ">
     <p>💥点爆</p>
@@ -186,10 +188,11 @@
     $('#yhBtn').click(e => {
       $('#yhBtn').hide()
       setTimeout(() => {
-        start()
+        // start()
         fireworks();
+        musicInBrowserHandler()
       }, 5000) // 这里的5000 是5s指烟花延时时间
-     
+
       console.log(updateConfig({ autoLaunch: true }));
     })
     function fireworks () {
@@ -202,7 +205,7 @@
         height: '100%'
       });
     }
-    
+
   </script>
 
 
@@ -217,12 +220,12 @@
       if (!localStorage.is_fx) {
         localStorage.is_fx = Date.now()
       } else {
-       
+
       }
     }
 
-    
-    
+
+
   </script>
   <script type="text/javascript">
     window.onhashchange = function () {
@@ -250,7 +253,7 @@
         100);
     }
     // jump2()
-    window.onpageshow = jump2
+    // window.onpageshow = jump2
   </script>
 
 
